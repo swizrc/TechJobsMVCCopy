@@ -1,0 +1,16 @@
+﻿<h3>@ViewBag.jobs.Count Result(s)</h3>
+
+    @foreach (Dictionary<string,string>
+    jobDict in ViewBag.jobs)
+    {
+    <table class="job-listing">
+        @foreach (KeyValuePair<string, string> jobEntry in jobDict)
+        {
+            <tr>
+                <th>@jobEntry.Key</th>
+                <td>@jobEntry.Value</td>
+            </tr>
+        }
+    </table>
+    <br>
+    }

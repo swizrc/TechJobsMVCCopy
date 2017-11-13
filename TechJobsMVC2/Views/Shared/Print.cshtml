@@ -1,0 +1,20 @@
+﻿@foreach (Dictionary<string, string> jobDict in ViewBag.jobs)
+{
+    <table class="job-listing">
+        @foreach (KeyValuePair<string, string> jobEntry in jobDict)
+        {
+            <tr>
+                @if (jobEntry.Key.Contains(" "))
+                {
+                    <th>@jobEntry.Key.Substring(0, 1).ToUpper()@jobEntry.Key.Substring(1, jobEntry.Key.IndexOf(" ") - 1)@jobEntry.Key.Substring(jobEntry.Key.IndexOf(" "), 2).ToUpper()@jobEntry.Key.Substring(jobEntry.Key.IndexOf(" ") + 2)</th>
+                }
+                else
+                {
+                    <th>@jobEntry.Key.Substring(0, 1).ToUpper()@jobEntry.Key.Substring(1)</th>
+                }
+                <td>@jobEntry.Value</td>
+            </tr>
+        }
+    </table>
+    <br>
+}
