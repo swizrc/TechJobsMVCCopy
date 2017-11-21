@@ -36,3 +36,7 @@
     // TODO #2 - Loop over jobs dictionary and display all job forlds
 
 }
+else if (ViewBag.jobs.Count == 0 && ViewBag.search != null)
+{
+    <h3>@ViewBag.jobs.Count Result(s)</h3>
+}
